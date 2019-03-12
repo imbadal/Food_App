@@ -25,8 +25,9 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity {
 
     ViewPager viewPager;
-    FragmentPagerAdapter adapter;
+    MyPagerAdapter adapter;
 
+    int page = 0;
 
     int currentPage = 0;
     Timer timer;
@@ -59,50 +60,51 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.vpPager);
         adapter = new MyPagerAdapter(getSupportFragmentManager());
+        viewPager.setOffscreenPageLimit(0);
         viewPager.setAdapter(adapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
 
-//        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-//            @Override
-//            public void onPageScrolled(int i, float v, int i1) {
-//
-//            }
-//
-//            @Override
-//            public void onPageSelected(int i) {
-//
-//                if (i == 0) {
-//
-//                    ProgressBar progressBar = findViewById(R.id.progressbar1);
-//                    progressBar.setProgress(0);
-//                    Log.d("test_", "onPageSelected:1 ");
-//
-//                } else if (i == 1) {
-//
-//                    Log.d("test_", "onPageSelected:2 ");
-//
-//
-//                } else if (i == 2) {
-//
-//
-//                } else {
-//
-//
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onPageScrollStateChanged(int i) {
-//
-//            }
-//        });
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+
+                if (i == 0) {
+
+                   page = 1;
+
+                    Log.d("test_", "onPageSelected:1 ");
+
+                } else if (i == 1) {
+
+                    Log.d("test_", "onPageSelected:2 ");
+
+
+                } else if (i == 2) {
+
+
+                } else {
+
+
+                }
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+
 
         final Handler handler = new Handler();
 
         final Runnable runnable = new Runnable() {
             @Override
             public void run() {
-                if (currentPage == 3) {
+                if (currentPage == 4) {
                     currentPage = 0;
                 }
                 viewPager.setCurrentItem(currentPage++, true);

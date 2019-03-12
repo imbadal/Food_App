@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 public class FirstFragment extends Fragment {
 
     ProgressBar progressBar;
+    private boolean _hasLoadedOnce= false; // your boolean field
 
 
     @Override
@@ -31,6 +32,35 @@ public class FirstFragment extends Fragment {
 
         progressBar = view.findViewById(R.id.progressbar1);
         progressBar.setProgress(0);
+        animateProgressBar();
+        return view;
+
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        Log.d("test_", "onStart: ");
+        progressBar.setProgress(0);
+
+    }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        if (this.isVisible()) {
+            // we check that the fragment is becoming visible
+
+            progressBar.setProgress(0);
+            animateProgressBar();
+
+        }
+
+    }
+
+    public void animateProgressBar(){
 
         ValueAnimator animator = ValueAnimator.ofInt(0, progressBar.getMax());
         animator.setDuration(5000);
@@ -49,21 +79,6 @@ public class FirstFragment extends Fragment {
         });
         animator.start();
 
-        return view;
-
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        Log.d("test_", "onStart: ");
-        progressBar.setProgress(0);
-
-      }
-
-      public ProgressBar gerBar(){
-        return progressBar;
-      }
 
 }

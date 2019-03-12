@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-public class ThirdFragment extends Fragment {
+public class FourthFragment extends Fragment {
 
     ProgressBar progressBar;
 
@@ -26,9 +26,9 @@ public class ThirdFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_third,container,false);
+        View view = inflater.inflate(R.layout.fragment_fourth,container,false);
 
-        progressBar = view.findViewById(R.id.progressbar3);
+        progressBar = view.findViewById(R.id.progressbar4);
         progressBar.setProgress(0);
 
 
@@ -42,7 +42,7 @@ public class ThirdFragment extends Fragment {
 
         Log.d("test_", "onStart: ");
         progressBar.setProgress(0);
-
+        animateProgressBar();
     }
 
 
@@ -55,6 +55,7 @@ public class ThirdFragment extends Fragment {
 
             progressBar.setProgress(0);
             animateProgressBar();
+
         }
 
     }

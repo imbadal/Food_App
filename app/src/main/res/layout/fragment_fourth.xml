@@ -16,7 +16,7 @@
             android:id="@+id/coordinator"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/kheer"
+            android:background="@drawable/ic"
             app:contentScrim="@color/colorPrimaryDark"
             app:expandedTitleMarginEnd="100dp"
             app:expandedTitleMarginStart="80dp"
@@ -33,7 +33,7 @@
                     android:layout_height="80dp">
 
                     <ProgressBar
-                        android:id="@+id/progressbar2"
+                        android:id="@+id/progressbar4"
                         style="?android:progressBarStyleHorizontal"
                         android:padding="16dp"
                         android:layout_width="56dp"
@@ -92,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="8dp"
-                    android:text="Rice Kheer"
+                    android:text="Ice Cream"
                     android:textColor="#ffffff" />
 
             </LinearLayout>
