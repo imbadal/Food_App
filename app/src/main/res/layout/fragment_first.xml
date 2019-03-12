@@ -18,15 +18,35 @@
             android:layout_height="match_parent"
             android:background="@drawable/rice"
             app:contentScrim="@color/colorPrimaryDark"
-            app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
+            app:expandedTitleMarginEnd="100dp"
+            app:expandedTitleMarginStart="80dp"
             app:layout_scrollFlags="exitUntilCollapsed|scroll">
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="80dp"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressbar1"
+                        style="?android:progressBarStyleHorizontal"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="16dp"
+                        android:progress="10"
+                        android:progressDrawable="@drawable/circle_progressbar" />
+
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.Toolbar>
 
         </android.support.design.widget.CollapsingToolbarLayout>
 
@@ -51,6 +71,7 @@
             <!--android:layout_marginTop="8dp"-->
             <!--android:scaleType="centerCrop"-->
             <!--android:src="@drawable/food" />-->
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -94,9 +115,9 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
                     android:text="How do you like it?"
                     android:textColor="#212121"
                     android:textSize="16sp" />
